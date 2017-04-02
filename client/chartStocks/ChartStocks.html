@@ -1,0 +1,34 @@
+<template name="ChartStocks">
+    <div class="container">
+        <div class="row">
+            {{#if Template.subscriptionsReady}}
+                {{#each stocks}}
+                        <div class="col-sm-6 col-md-4 col-lg-3 bs-callout">
+                            <div class="bar-container">
+                                <div class='content-container'>
+                                    <i class="fa fa-trash"></i>
+                                    <div class="bar-content"><strong>{{stockSymbol}}</strong></div>
+                                    <div class="bar-content">{{stockDescription}}</div>
+                                </div>
+                                    
+                            </div>
+                        </div>
+                {{/each}}
+            {{/if}}
+            <div class="col-sm-6 col-md-4 col-lg-3 bs-callout">
+                <div class="bar-container">
+                    <div class='content-container'>
+                        <label for="new-stock">Syncs in realtime across clients</label>
+                        <form class="input-group new-stock-group">
+                            <input type="text" class="form-control" id="new-stock" placeholder="Search for..." autocomplete="off">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="submit">Go!</button>
+                            </span>
+                        </form>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</template>
